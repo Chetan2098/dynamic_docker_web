@@ -1,0 +1,21 @@
+# Go into each directory and build the image
+cd backend
+docker build -t user_backend .
+
+cd ../frontend
+docker build -t user_frontend .
+
+cd ../routing
+docker build -t user_routing .
+
+docker network create user_app_net
+
+
+# Run backend
+docker run -dit --name backend --network user_app_net user_backend
+
+# Run frontend (example: on port 4000)
+docker run -dit -p 4000:80 --name frontend --network user_app_net user_frontend
+
+# Run routing (e.g., reverse proxy with Nginx)
+docker run -dit -p 80:80 --name routing --network user_app_net user_routing

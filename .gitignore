@@ -1,0 +1,44 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+.Python
+env/
+venv/
+venv.*/
+pip-wheel-metadata/
+
+# ---- Docker ----
+*.log
+docker_*_cache/
+**/tmp/
+
+# ---- VS Code ----
+.vscode/
+.history/
+
+# ---- macOS / Linux ----
+.DS_Store
+.idea/
+*.swp
+*.swo
+
+# ---- Node (useful even if you add tooling later) ----
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# ---- Secrets & config ----
+.env
+*.key
+*.pem
+*.crt
+secret*.json
+*.sqlite
+
+# ---- Build artifacts ----
+dist/
+build/
+coverage/
+htmlcov/
